@@ -1,9 +1,4 @@
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
-
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<cr>")
 
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
@@ -21,6 +16,8 @@ vim.keymap.set("n", "<A-e>", ":tabnew<CR>", { desc = "Open new empty Tab" })
 
 vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
 
+vim.keymap.set("n", "\\", "<cmd>Neotree toggle<cr>", { desc = "Neotree toggle" })
+
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Telescope find files" })
 vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "Telescope live grep" })
@@ -30,4 +27,3 @@ vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Telescope buf
 
 local undotree = require("undotree")
 vim.keymap.set("n", "<leader>u", undotree.toggle, { noremap = true, silent = true })
-
