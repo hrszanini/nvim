@@ -20,10 +20,19 @@ vim.keymap.set("n", "\\", "<cmd>Neotree toggle<cr>", { desc = "Neotree toggle" }
 
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Telescope find files" })
+vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "Telescope word grep" })
 vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "Telescope live grep" })
 vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "Telescope help tags" })
 vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "Telescope help keymaps" })
+vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = "Telescope find oldfiles" })
 vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Telescope buffers" })
 
 local undotree = require("undotree")
 vim.keymap.set("n", "<leader>u", undotree.toggle, { noremap = true, silent = true })
+
+local dap = require("dap")
+vim.keymap.set("n", "<Leader>b", dap.toggle_breakpoint)
+vim.keymap.set("n", "<F5>", dap.continue)
+vim.keymap.set("n", "<F6>", dap.step_over)
+vim.keymap.set("n", "<F7>", dap.step_into)
+vim.keymap.set("n", "<F8>", dap.step_out)

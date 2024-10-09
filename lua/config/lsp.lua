@@ -6,11 +6,15 @@ return {
 		},
 		python = {
 			formatter = { "black" },
-			lsp = { "pyright" },
+			lsp = { "pylsp" },
 		},
 		rust = {
 			formatter = { "rustfmt" },
 			lsp = { "rust_analyzer" },
+		},
+		java = {
+			formatter = {},
+			lsp = { "jdtls" },
 		},
 	},
 	binds = function()
