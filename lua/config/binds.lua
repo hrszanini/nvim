@@ -7,16 +7,20 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
-vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Save File" })
+vim.keymap.set("n", "<C-q>", "<cmd>q<cr>", { desc = "Close window" })
+vim.keymap.set("n", "<C-e>", "<cmd>new<cr>", { desc = "Open new window" })
+vim.keymap.set("n", "<C-s>", "<cmd>w<cr>", { desc = "Save file" })
 
 vim.keymap.set("n", "<A-h>", "<C-PageUp>", { desc = "Next Tab" })
 vim.keymap.set("n", "<A-l>", "<C-PageDown>", { desc = "Previous Tab" })
-vim.keymap.set("n", "<A-q>", ":tabclose<CR>", { desc = "Close Tab" })
-vim.keymap.set("n", "<A-e>", ":tabnew<CR>", { desc = "Open new empty Tab" })
+vim.keymap.set("n", "<A-q>", "<cmd>tabclose<cr>", { desc = "Close Tab" })
+vim.keymap.set("n", "<A-e>", "<cmd>tabnew<cr>", { desc = "Open new empty Tab" })
 
 vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
 
 vim.keymap.set("n", "\\", "<cmd>Neotree toggle<cr>", { desc = "Neotree toggle" })
+
+vim.keymap.set("n", "<leader>t", "<cmd>TodoQuickFix<cr>", { desc = "Todo list" })
 
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Telescope find files" })
@@ -28,11 +32,11 @@ vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = "Telescope find old
 vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Telescope buffers" })
 
 local undotree = require("undotree")
-vim.keymap.set("n", "<leader>u", undotree.toggle, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>u", undotree.toggle, { desc = "Undotree", noremap = true, silent = true })
 
 local dap = require("dap")
-vim.keymap.set("n", "<Leader>b", dap.toggle_breakpoint)
-vim.keymap.set("n", "<F5>", dap.continue)
-vim.keymap.set("n", "<F6>", dap.step_over)
-vim.keymap.set("n", "<F7>", dap.step_into)
-vim.keymap.set("n", "<F8>", dap.step_out)
+vim.keymap.set("n", "<Leader>b", dap.toggle_breakpoint, { desc = "Breakpoint" })
+vim.keymap.set("n", "<F5>", dap.continue, { desc = "DAP start" })
+vim.keymap.set("n", "<F6>", dap.step_over, { desc = "DAP step over" })
+vim.keymap.set("n", "<F7>", dap.step_into, { desc = "DAP step into" })
+vim.keymap.set("n", "<F8>", dap.step_out, { desc = "DAP step out" })
