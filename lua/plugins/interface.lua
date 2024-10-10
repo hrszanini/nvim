@@ -13,17 +13,20 @@ return {
 
 	{
 		"folke/which-key.nvim",
-		event = "VeryLazy",
-		opts = {},
-		keys = {
-			{
-				"<leader>?",
-				function()
-					require("which-key").show({ global = false })
-				end,
-				desc = "Buffer Local Keymaps (which-key)",
-			},
-		},
+		event = "VimEnter",
+		config = function()
+			local wk = require("which-key")
+
+			wk.setup()
+			wk.add {
+				{ '<leader>c', desc = "Remote [C]onnection", icon = "" },
+				{ '<leader>s', desc = "[S]earch", icon = "" },
+				{ '<leader>t', icon = "" },
+				{ '<leader>u', icon = "󰕌" },
+				{ '<leader>p', icon = "" },
+				{ '<leader>l', desc = "Lazy", icon = "󰒲" },
+			}
+		end
 	},
 
 	{
@@ -45,7 +48,7 @@ return {
 		end,
 	},
 
-	{ 
+	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require('gitsigns').setup()

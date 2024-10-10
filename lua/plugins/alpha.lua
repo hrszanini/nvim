@@ -24,7 +24,8 @@ return {
 		theme.section.buttons.val = {
 			theme.button("f", "	Find file", ":Telescope find_files <CR>"),
 			theme.button("e", "	New file", ":ene <BAR> startinsert <CR>"),
-			theme.button("r", "	Recently used files", ":Telescope oldfiles <CR>"),
+			theme.button("p", "	Projects", ":Telescope projects<CR>"),
+			theme.button("o", "	Recently used files", ":Telescope oldfiles <CR>"),
 			theme.button("g", "󰗧	Find text", ":Telescope live_grep <CR>"),
 			theme.button("c", "	Configuration", ":cd " .. configuration_path .. "<CR>:e init.lua <CR>"),
 			theme.button("q", "	Quit Neovim", ":qa<CR>"),

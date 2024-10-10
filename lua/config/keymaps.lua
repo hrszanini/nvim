@@ -43,6 +43,8 @@ vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "[G]oto [D]efinition
 vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "[G]oto [D]efinition" })
 vim.keymap.set("n", "gI", builtin.lsp_implementations, { desc = "[G]oto [I]mplementation" })
 
+vim.keymap.set("n", "<leader>p", "<cmd> Telescope projects<cr>", { desc = "[P]rojects" })
+
 local undotree = require("undotree")
 vim.keymap.set("n", "<leader>u", undotree.toggle, { desc = "Undotree", noremap = true, silent = true })
 
@@ -52,3 +54,8 @@ vim.keymap.set("n", "<leader>u", undotree.toggle, { desc = "Undotree", noremap =
 --vim.keymap.set("n", "<F6>", dap.step_over, { desc = "DAP step over" })
 --vim.keymap.set("n", "<F7>", dap.step_into, { desc = "DAP step into" })
 --vim.keymap.set("n", "<F8>", dap.step_out, { desc = "DAP step out" })
+
+local remote = require("remote-sshfs.api")
+vim.keymap.set("n", "<leader>cl", remote.connect, { desc = "Remote list" })
+vim.keymap.set("n", "<leader>ce", ":RemoteSSHFSConnect ", { desc = "Remote connect" })
+vim.keymap.set("n", "<leader>cq", remote.disconnect, { desc = "Remote disconnect" })
