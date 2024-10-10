@@ -1,6 +1,5 @@
-require("config.opts")
+require("config.options")
 require("config.lazy")
-require("config.binds")
+require("config.keymaps")
+require("config.autocmds")
 
--- TODO: Teste
--- WARN: Teste
