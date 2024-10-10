@@ -3,7 +3,7 @@
 ## Suporte a linguagens
 
 | Linguagem     | Formatter | Linter    | LSP   | DAP   |
-|:             :|:         :|:         :|:     :|:     :|
+|:--------------|:---------:|:---------:|:-----:|:-----:|
 | C             |          |          |      |      |
 | Java          |          |          |      |      |
 | Javascript    |          |          |      |      |
