@@ -22,6 +22,8 @@ vim.keymap.set("n", "\\", "<cmd>Neotree toggle<cr>", { desc = "Neotree toggle" }
 
 vim.keymap.set("n", "<leader>t", "<cmd>TodoQuickFix<cr>", { desc = "Todo list" })
 
+vim.keymap.set("n", "<leader>m", "<cmd>Markview<cr>", { desc = "Markdown Preview Toogle" })
+
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "[R]e[n]ame" })
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
 
