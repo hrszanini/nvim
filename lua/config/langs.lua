@@ -4,12 +4,18 @@ local languages = {
 	},
 	cpp = {
 	},
+	css = {
+		lsp = "css-lsp",
+		formatter = "prettier"
+	},
 	java = {
 		lsp = "jdtls",
 		dap = "java-debug-adapter",
 		prevent_setup = "jdtls"
 	},
 	javascript = {
+		lsp = "eslint",
+		formatter = "prettier"
 	},
 	lua = {
 		formatter = "stylua",
@@ -22,6 +28,7 @@ local languages = {
 	python = {
 		formatter = "black",
 		lsp = "pylsp",
+		dap = "debugpy"
 	},
 	rust = {
 		lsp = "rust_analyzer"
