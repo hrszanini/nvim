@@ -47,15 +47,17 @@ vim.keymap.set("n", "gI", builtin.lsp_implementations, { desc = "[G]oto [I]mplem
 
 vim.keymap.set("n", "<leader>p", "<cmd> Telescope projects<cr>", { desc = "[P]rojects" })
 
+vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, { desc = "Code [A]ctions" })
+
 local undotree = require("undotree")
 vim.keymap.set("n", "<leader>u", undotree.toggle, { desc = "Undotree", noremap = true, silent = true })
 
---local dap = require("dap")
---vim.keymap.set("n", "<Leader>b", dap.toggle_breakpoint, { desc = "Breakpoint" })
---vim.keymap.set("n", "<F5>", dap.continue, { desc = "DAP start" })
---vim.keymap.set("n", "<F6>", dap.step_over, { desc = "DAP step over" })
---vim.keymap.set("n", "<F7>", dap.step_into, { desc = "DAP step into" })
---vim.keymap.set("n", "<F8>", dap.step_out, { desc = "DAP step out" })
+local dap = require("dap")
+vim.keymap.set("n", "<Leader>b", dap.toggle_breakpoint, { desc = "Breakpoint" })
+vim.keymap.set("n", "<F5>", dap.continue, { desc = "DAP start" })
+vim.keymap.set("n", "<F6>", dap.step_over, { desc = "DAP step over" })
+vim.keymap.set("n", "<F7>", dap.step_into, { desc = "DAP step into" })
+vim.keymap.set("n", "<F8>", dap.step_out, { desc = "DAP step out" })
 
 local remote = require("remote-sshfs.api")
 vim.keymap.set("n", "<leader>cl", remote.connect, { desc = "Remote list" })

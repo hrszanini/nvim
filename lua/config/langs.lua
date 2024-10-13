@@ -1,10 +1,13 @@
 local languages = {
 	c = {
+		lsp = "clangd"
 	},
 	cpp = {
 	},
 	java = {
-		lsp = "jdtls"
+		lsp = "jdtls",
+		dap = "java-debug-adapter",
+		prevent_setup = "jdtls"
 	},
 	javascript = {
 	},

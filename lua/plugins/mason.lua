@@ -22,11 +22,13 @@ return {
 		config = function()
 			local mason_lspconfig = require("mason-lspconfig")
 			local lspconfig = require("lspconfig")
-
+			local prevent = require("config.langs").list("prevent_setup")
 			mason_lspconfig.setup({
 				handlers = {
 					function(server_name)
-						lspconfig[server_name].setup({})
+						if not vim.list_contains(prevent, server_name) then
+							lspconfig[server_name].setup({})
+						end
 					end
 				}
 			})
