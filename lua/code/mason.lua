@@ -7,7 +7,7 @@ return {
 		config = function()
 			require("mason").setup()
 			require("mason-tool-installer").setup {
-				ensure_installed = require("config.langs").list("formatter", "lsp", "dap")
+				ensure_installed = require("config.langs").list("formatter", "lsp", "dap", "linter")
 			}
 		end
 	},

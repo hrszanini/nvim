@@ -10,6 +10,6 @@
 | Javascript    | ✘         | ✘         | ✘     | ✘     |
 | Lua           | ✔         | ✘         | ✔     | ✘     |
 | Markdown      | ✘         | ✘         | ✘     | ✘     |
-| Python        | ✔         | ✘         | ✔     | ✘     |
+| Python        | ✔         | ✘         | ✔     | ✔     |
 | Rust          | ✘         | ✘         | ✘     | ✘     |
 

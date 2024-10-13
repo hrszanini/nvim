@@ -28,7 +28,8 @@ local languages = {
 	python = {
 		formatter = "black",
 		lsp = "pylsp",
-		dap = "debugpy"
+		dap = "debugpy",
+		linter = "pylint"
 	},
 	rust = {
 		lsp = "rust_analyzer"
