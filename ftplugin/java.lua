@@ -27,6 +27,7 @@ local config = {
 		'--add-modules=ALL-SYSTEM',
 		'--add-opens', 'java.base/java.util=ALL-UNNAMED',
 		'--add-opens', 'java.base/java.lang=ALL-UNNAMED',
+		'-javaagent:' .. installation_path_lsp .. '/lombok.jar',
 		'-jar', vim.fn.glob(installation_path_lsp .. '/plugins/org.eclipse.equinox.launcher_*.jar'),
 		'-configuration', installation_path_lsp .. '/config_linux',
 		'-data', workspace_dir
