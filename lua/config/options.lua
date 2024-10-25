@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.g.have_nerd_font = true
-vim.g.langs = { "c", "rust", "java", "javascript", "python", "lua", "vim" }
+vim.g.langs = { "c", "rust", "java", "javascript", "python", "lua", "vim", "gdscript", "godotResource" }
 
 vim.opt.number = true
 vim.opt.relativenumber = true

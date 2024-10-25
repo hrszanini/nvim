@@ -26,5 +26,21 @@ return {
 		local python_dap = require("config.langs").configs.python.dap
 		local path = require("mason-registry").get_package(python_dap):get_install_path() .. "/venv/bin/python"
 		require("dap-python").setup(path)
+
+		dap.adapters.godot = {
+			type = "server",
+			host = "127.0.0.1",
+			port = 6006,
+		}
+
+		dap.configurations.gdscript = {
+			{
+				type = "godot",
+				request = "launch",
+				name = "Launch scene",
+				project = "${workspaceFolder}",
+				launch_scene = true,
+			},
+		}
 	end
 }

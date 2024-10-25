@@ -32,7 +32,8 @@ local languages = {
 		linter = "pylint"
 	},
 	rust = {
-		lsp = "rust_analyzer"
+		lsp = "rust_analyzer",
+		dap = "cpptools"
 	},
 }
 

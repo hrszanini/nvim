@@ -23,6 +23,8 @@ return {
 			local mason_lspconfig = require("mason-lspconfig")
 			local lspconfig = require("lspconfig")
 			local prevent = require("config.langs").list("prevent_setup")
+			local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 			mason_lspconfig.setup({
 				handlers = {
 					function(server_name)
@@ -31,6 +33,12 @@ return {
 						end
 					end
 				}
+			})
+
+			lspconfig.gdscript.setup({
+				name = "godot",
+				cmd = vim.lsp.rpc.connect("127.0.0.1", 6005),
+				capabilities = capabilities
 			})
 		end,
 	},
