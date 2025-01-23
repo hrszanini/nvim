@@ -36,10 +36,10 @@ return {
 			},
 			completion = {},
 			mapping = cmp.mapping.preset.insert({
-				["<C-n>"] = cmp.mapping.select_next_item(),
-				["<C-b>"] = cmp.mapping.select_prev_item(),
-				["<C-p>"] = cmp.mapping.scroll_docs(-4),
-				["<C-f>"] = cmp.mapping.scroll_docs(4),
+				["<c-n>"] = cmp.mapping.select_next_item(),
+				["<cm-n>"] = cmp.mapping.select_prev_item(),
+				["<c-p>"] = cmp.mapping.scroll_docs(-4),
+				["<cm-p>"] = cmp.mapping.scroll_docs(4),
 				["<TAB>"] = cmp.mapping.confirm({ select = true }),
 				["<C-Space>"] = cmp.mapping.complete({}),
 				["<C-l>"] = cmp.mapping(function()

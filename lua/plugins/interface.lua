@@ -3,12 +3,8 @@ return {
 		"AlexvZyl/nordic.nvim",
 		"sainnhe/gruvbox-material",
 		"rebelot/kanagawa.nvim",
+		"navarasu/onedark.nvim",
 		priority = 1000,
-		config = function()
-			vim.cmd.colorscheme("gruvbox-material")
-			vim.cmd.hi("Comment gui=none")
-			--vim.cmd.hi "Normal guibg=NONE ctermbg=NONE"
-		end,
 	},
 
 	{
@@ -29,15 +25,6 @@ return {
 		end
 	},
 
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		opts = {},
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		},
-	},
 
 	{
 		"lukas-reineke/indent-blankline.nvim",
