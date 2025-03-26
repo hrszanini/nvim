@@ -44,5 +44,5 @@ require("lazy").setup({
 	},
 })
 
-vim.cmd.colorscheme("onedark")
+vim.cmd.colorscheme("sonokai")
 vim.cmd.hi("Comment gui=none")

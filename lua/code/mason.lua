@@ -40,6 +40,19 @@ return {
 				cmd = vim.lsp.rpc.connect("127.0.0.1", 6005),
 				capabilities = capabilities
 			})
+
+			lspconfig.pylsp.setup({
+				settings = {
+					pylsp = {
+						plugins = {
+							pycodestyle = {
+								ignore = { 'W391' },
+								maxLineLength = 120
+							}
+						}
+					}
+				}
+			})
 		end,
 	},
 }

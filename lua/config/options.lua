@@ -27,5 +27,7 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.termguicolors = true
 
-vim.cmd.hi("Comment gui=none")
---vim.cmd.hi "Normal guibg=NONE ctermbg=NONE"
+-- vim.opt.cc = "120"
+
+-- vim.cmd.hi("Comment gui=none")
+-- vim.cmd.hi "Normal guibg=NONE ctermbg=NONE"

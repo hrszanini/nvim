@@ -1,16 +1,13 @@
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<cr>")
 
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
-
-vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
-vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" }) vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 vim.keymap.set("n", "<C-q>", "<cmd>q<cr>", { desc = "Close window" })
 vim.keymap.set("n", "<C-e>", "<cmd>new<cr>", { desc = "Open new window" })
 vim.keymap.set("n", "<C-s>", "<cmd>w<cr>", { desc = "Save file" })
-
 
 vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
 
@@ -56,16 +53,15 @@ vim.keymap.set("n", "<F6>", dap.step_over, { desc = "DAP step over" })
 vim.keymap.set("n", "<F7>", dap.step_into, { desc = "DAP step into" })
 vim.keymap.set("n", "<F8>", dap.step_out, { desc = "DAP step out" })
 
-local remote = require("remote-sshfs.api")
-vim.keymap.set("n", "<leader>cl", remote.connect, { desc = "Remote list" })
-vim.keymap.set("n", "<leader>ce", ":RemoteSSHFSConnect ", { desc = "Remote connect" })
-vim.keymap.set("n", "<leader>cq", remote.disconnect, { desc = "Remote disconnect" })
-
 local harpoon = require("harpoon")
---vim.keymap.set("n", "<A-h>", "<C-PageUp>", { desc = "Next Tab" })
---vim.keymap.set("n", "<A-l>", "<C-PageDown>", { desc = "Previous Tab" })
---vim.keymap.set("n", "<A-q>", "<cmd>tabclose<cr>", { desc = "Close Tab" })
-vim.keymap.set("n", "<A-e>", function() harpoon:list():add() end)
+vim.keymap.set("n", "<A-c>", function() harpoon:list():clear() end, { desc = "Clear Harpoon list" })
+vim.keymap.set("n", "<A-k>", function() harpoon:list():add() end)
 vim.keymap.set("n", "<A-h>", function() harpoon:list():prev() end)
 vim.keymap.set("n", "<A-l>", function() harpoon:list():next() end)
-vim.keymap.set("n", "<leader><leader>", function() Harpoon_toogle_telescope(harpoon:list()) end, { desc = "Open harpoon window" })
+vim.keymap.set("n", "<leader><leader>", function() Harpoon_toogle_telescope(harpoon:list()) end, { desc = "Harpoon" })
+
+vim.keymap.set("n", "<A-.>", "<C-PageUp>", { desc = "Next Tab" })
+vim.keymap.set("n", "<A-,>", "<C-PageDown>", { desc = "Previous Tab" })
+vim.keymap.set("n", "<A-c>", "<cmd>tabclose<cr>", { desc = "Close Tab" })
+
+vim.keymap.set("n", "<leader>db", "<cmd>tabnew<cr><cmd>DBUI<cr>", { desc = "DBUI" })
