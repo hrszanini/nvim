@@ -18,7 +18,11 @@ vim.opt.timeoutlen = 300
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = {
+	tab = "» ",
+	trail = "·",
+	nbsp = "␣"
+}
 vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
@@ -27,7 +31,7 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.termguicolors = true
 
--- vim.opt.cc = "120"
+vim.opt.cc = "120"
 
 -- vim.cmd.hi("Comment gui=none")
 -- vim.cmd.hi "Normal guibg=NONE ctermbg=NONE"
