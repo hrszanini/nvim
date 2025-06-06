@@ -1,4 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
 	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
@@ -12,24 +13,25 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 		os.exit(1)
 	end
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
-		{ import = "code" }
+		{ import = "plugins.style" },
+		{ import = "plugins.code" }
 	},
 	defaults = {
 		lazy = false,
 		version = false, -- always use the latest git commit
 	},
 	checker = {
-		enabled = true, -- check for plugin updates periodically
-		notify = false, -- notify on update
-	},            -- automatically check for plugin updates
+		enabled = true,
+		notify = false, 
+	},            
 	performance = {
 		rtp = {
-			-- disable some rtp plugins
 			disabled_plugins = {
 				"gzip",
 				-- "matchit",
@@ -37,12 +39,10 @@ require("lazy").setup({
 				-- "netrwPlugin",
 				"tarPlugin",
 				"tohtml",
-				"tutor",
+				-- "tutor",
 				"zipPlugin",
 			},
 		},
 	},
 })
 
-vim.cmd.colorscheme("sonokai")
-vim.cmd.hi("Comment gui=none")

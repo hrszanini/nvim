@@ -3,7 +3,7 @@ return {
 	tag = "0.1.8",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
+		{ "nvim-tree/nvim-web-devicons", enabled = true},
 		"nvim-telescope/telescope-ui-select.nvim",
 	},
 	config = function()
@@ -14,9 +14,9 @@ return {
 				mappings = {
 					i = {
 						["<c-n>"] = actions.move_selection_previous,
-						["<cm-n>"] = actions.move_selection_next,
-						["<c-p>"] = actions.preview_scrolling_down,
-						["<cm-p>"] = actions.preview_scrolling_up,
+						["<c-p>"] = actions.move_selection_next,
+						["<c-[>"] = actions.preview_scrolling_down,
+						["<c-]>"] = actions.preview_scrolling_up,
 						["<Esc>"] = actions.close
 					}
 				}
@@ -24,3 +24,4 @@ return {
 		})
 	end,
 }
+
