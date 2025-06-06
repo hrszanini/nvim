@@ -71,7 +71,7 @@ return {
 					"do JSON compilado a partir de proto-buffers.",
 					"de uma compilação com tempo acima da media.",
 					"de uma configuração Webpack eficiente nos builds.",
-					"da execução parelela de funções em multi-threads.",
+					"da execução paralela de funções em multi-threads.",
 					"de compilação multi-plataforma de forma asincrona.",
 					"da execução de requisições effcientes na API.",
 					"na estabilidade do protocolo de transferência de dados.",

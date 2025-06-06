@@ -24,6 +24,9 @@ vim.keymap.set("n", "|", "<cmd>NvimTreeToggle<cr>")
 -- LazyGit
 vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>")
 
+-- Formatter
+vim.keymap.set("n", "<leader>f", "<cmd>Format<cr>", { desc = "Format" })
+
 -- Undotree
 local undotree = require("undotree")
 vim.keymap.set("n", "<leader>u", undotree.toggle, { desc = "Undotree", noremap = true, silent = true })
