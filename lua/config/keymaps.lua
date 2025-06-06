@@ -38,6 +38,7 @@ vim.keymap.set("n", "<leader>sf", telescope.find_files, { desc = "Find Files" })
 vim.keymap.set("n", "<leader>sg", telescope.live_grep, { desc = "Grep Search" })
 vim.keymap.set("n", "<leader>sw", telescope.grep_string, { desc = "Find Word" })
 vim.keymap.set("n", "<leader>sh", telescope.help_tags, { desc = "Find Help" })
+vim.keymap.set('n', '<leader><leader>', telescope.buffers, { desc = "Find existing buffers" })
 
 vim.keymap.set("n", "<leader>gd", telescope.lsp_definitions, { desc = "Go to Definition" })
 vim.keymap.set("n", "<leader>gr", telescope.lsp_references, { desc = "Go to References" })
