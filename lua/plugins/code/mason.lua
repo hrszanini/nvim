@@ -20,6 +20,7 @@ return {
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
 
 				local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
+
 				vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
 					buffer = event.buf,
 					group = highlight_augroup,
@@ -51,15 +52,16 @@ return {
 		vim.diagnostic.config {
 			severity_sort = true,
 			float = { border = 'rounded', source = 'if_many' },
-			underline = { severity = vim.diagnostic.severity.ERROR },
-			signs = vim.g.have_nerd_font and {
+			underline = { severity = vim.diagnostic.severity.WARN },
+			signs = {
 				text = {
 					[vim.diagnostic.severity.ERROR] = '󰅚 ',
 					[vim.diagnostic.severity.WARN] = '󰀪 ',
 					[vim.diagnostic.severity.INFO] = '󰋽 ',
 					[vim.diagnostic.severity.HINT] = '󰌶 ',
 				},
-			} or {},
+			},
+
 			virtual_text = {
 				source = 'if_many',
 				spacing = 2,
@@ -80,21 +82,25 @@ return {
 		local servers = {
 			clangd = {},
 			gopls = {},
-			pylsp = {},
+			pyright = {},
 			rust_analyzer = {},
 			ts_ls = {},
 			lua_ls = {
-				-- cmd = { ... },
-				-- filetypes = { ... },
-				-- capabilities = {},
-				settings = {
-					Lua = {
-						completion = {
-							callSnippet = 'Replace',
-						},
-						-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-						-- diagnostics = { disable = { 'missing-fields' } },
+				runtime = {
+					version = 'LuaJIT',
+				},
+				diagnostics = {
+					globals = { 'vim' },
+				},
+				workspace = {
+					library = {
+						[vim.fn.expand('$VIMRUNTIME/lua')] = true,
+						[vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
 					},
+					checkThirdParty = false,
+				},
+				telemetry = {
+					enable = false,
 				},
 			},
 		}

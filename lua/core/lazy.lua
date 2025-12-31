@@ -45,4 +45,3 @@ require("lazy").setup({
 		},
 	},
 })
-
