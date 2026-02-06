@@ -3,4 +3,4 @@ require("core.lazy")
 require("core.keymaps")
 require("core.autocommands")
 
-vim.cmd.colorscheme("everforest")
+vim.cmd.colorscheme("noctishc")
